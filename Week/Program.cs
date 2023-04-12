@@ -1,13 +1,9 @@
 ﻿int a = 0;
 
 Console.WriteLine("Tap day of the week");
-if(int.TryParse(Console.ReadLine(), out a))
+if(int.TryParse(Console.ReadLine(), out a) && a >= 1 && a < 7)
 {
-    if(a > 7)
-    {
-        Console.WriteLine("Tap number less then 7");
-    }
-    else if(a == 1)
+    if(a == 1)
     {
         Console.WriteLine("Monday");
     }
@@ -38,5 +34,5 @@ if(int.TryParse(Console.ReadLine(), out a))
 }
 else
 {
-    Console.WriteLine("Tap number less then 7");
+    Console.WriteLine("Tap number from 1 to 7");
 }
