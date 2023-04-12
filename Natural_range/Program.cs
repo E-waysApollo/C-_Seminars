@@ -9,10 +9,13 @@ else
   Console.WriteLine("Oooops");  
 }
 
-int n = a * -1;
-Console.Write(n);
-while( n < a)
-{
-    n++;
-    Console.Write($", {n}");
-}
+// int n = a * -1;
+// Console.Write(n);
+// while( n < a)
+// {
+//     n++;
+//     Console.Write($", {n}");
+// }
+
+for(int n = -a; n <= a; n++)
+    Console.Write($"{n} ");
