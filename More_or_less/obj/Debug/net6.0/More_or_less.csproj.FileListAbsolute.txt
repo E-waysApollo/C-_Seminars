@@ -1,0 +1,15 @@
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\bin\Debug\net6.0\More_or_less.exe
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\bin\Debug\net6.0\More_or_less.deps.json
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\bin\Debug\net6.0\More_or_less.runtimeconfig.json
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\bin\Debug\net6.0\More_or_less.dll
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\bin\Debug\net6.0\More_or_less.pdb
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\obj\Debug\net6.0\More_or_less.csproj.AssemblyReference.cache
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\obj\Debug\net6.0\More_or_less.GeneratedMSBuildEditorConfig.editorconfig
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\obj\Debug\net6.0\More_or_less.AssemblyInfoInputs.cache
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\obj\Debug\net6.0\More_or_less.AssemblyInfo.cs
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\obj\Debug\net6.0\More_or_less.csproj.CoreCompileInputs.cache
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\obj\Debug\net6.0\More_or_less.dll
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\obj\Debug\net6.0\refint\More_or_less.dll
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\obj\Debug\net6.0\More_or_less.pdb
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\obj\Debug\net6.0\More_or_less.genruntimeconfig.cache
+C:\Материалы\Курсы\GB\Разработчик\languages\C#_Seminars\More_or_less\obj\Debug\net6.0\ref\More_or_less.dll
