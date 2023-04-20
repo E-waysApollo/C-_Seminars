@@ -23,6 +23,7 @@ void Main()
             case "t9": task9(); break;
             case "t11": task11(); break;
             case "t12": task12(); break;
+            case "t14": task14(); break;
             case "exit": IsWork = false; break;
             default: Console.WriteLine("There is no task"); break;
         }
@@ -61,4 +62,13 @@ void task12()// Программа принимает на вход 2 прост
     Console.WriteLine($"The rest is {rest}");
     else
     Console.WriteLine("Goood");
+}
+
+void task14()// Прграмма принимает на вход число и проверяет его кратность на 7 и 23 одновременно.И выводит результат
+{
+    int num = ReadNum("number");
+    if(num % 7 == 0 && num % 23 == 0)
+    Console.WriteLine("All is good");
+    else
+    Console.WriteLine("It is not divided on 7 or 23");
 }
