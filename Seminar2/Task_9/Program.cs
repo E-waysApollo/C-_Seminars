@@ -23,6 +23,7 @@ void Main()
             case "t9": task9(); break;
             case "t11": task11(); break;
             case "t12": task12(); break;
+            case "sq": square(); break;
             case "t14": task14(); break;
             case "t16": task16(); break;
             case "exit": IsWork = false; break;
@@ -63,6 +64,13 @@ void task12()// Программа принимает на вход 2 прост
     Console.WriteLine($"The rest is {rest}");
     else
     Console.WriteLine("Goood");
+}
+
+void square()// Программа вычисляет площадь треугольника по 2-м катетам
+{
+    int kat1 = ReadNum("first katet");
+    int kat2 = ReadNum("second katet");
+    Console.WriteLine($"Triangle square is {kat1 * kat2 / 2}");
 }
 
 void task14()// Прграмма принимает на вход число и проверяет его кратность на 7 и 23 одновременно.И выводит результат
