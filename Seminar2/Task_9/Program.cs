@@ -80,6 +80,7 @@ void task14()// Прграмма принимает на вход число и 
     Console.WriteLine("All is good");
     else
     Console.WriteLine("It is not divided on 7 or 23");
+}
 
 void task16()//Программа принимает на вход 2 числа и проверяет является ли одно число квадратом другого: 5, 25 - да; 25, 5 - да
 {
