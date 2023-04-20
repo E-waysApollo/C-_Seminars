@@ -23,6 +23,7 @@ void Main()
             case "t9": task9(); break;
             case "t11": task11(); break;
             case "t12": task12(); break;
+            case "t16": task16(); break;
             case "exit": IsWork = false; break;
             default: Console.WriteLine("There is no task"); break;
         }
@@ -61,4 +62,14 @@ void task12()// Программа принимает на вход 2 прост
     Console.WriteLine($"The rest is {rest}");
     else
     Console.WriteLine("Goood");
+}
+
+void task16()//Программа принимает на вход 2 числа и проверяет является ли одно число квадратом другого: 5, 25 - да; 25, 5 - да
+{
+    int num1 = ReadNum("first number");
+    int num2 = ReadNum("second nember");
+    if(num1 * num1 == num2 || num2 * num2 == num1)
+    Console.WriteLine("Yes it is a square");
+    else
+    Console.WriteLine("No. It is not a square");
 }
