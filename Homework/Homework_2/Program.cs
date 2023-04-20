@@ -19,6 +19,7 @@ void Main()
         switch (task)
         {
             case "10": task10(); break;
+            case "15": task15(); break;
             case "ex": IsWorking = false; break;
             default: break;
         }
@@ -38,4 +39,23 @@ void task10()//Приграмма принимает на вход 3-х знач
         ThreeDigit = true;
         }
     }
+}
+
+void task15()//Программа принимает на вход номер дня недели и определяет выходной он или нет
+{
+    bool WeekDay = false;
+    while(!WeekDay)
+    {
+        int day = ReadNum("the day of the week");
+        if(day < 6 && day > 0)
+        {
+            Console.WriteLine("It is a work day");
+            WeekDay = true;
+        }
+        else if(day <= 7 && day > 0)
+        {
+            Console.WriteLine("It's a holyday!!!");
+            WeekDay = true;
+        }     
+    }    
 }
