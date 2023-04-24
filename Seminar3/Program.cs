@@ -27,5 +27,36 @@ void Main()
     }
 }
 
-void task18()
-{}
+void task18()// рограмма по заданной четверти возвращает диапазон координат X,Y
+{
+    bool writeQurter = true;
+    int quater;
+    while(writeQurter)
+    {
+        quater = ReadNum("quater number"); 
+        if(quater == 1)
+        {
+            Console.WriteLine("X: (-inf; 0)");
+            Console.WriteLine("Y: (0; +inf)");
+            writeQurter = false;        
+        }
+        else if(quater == 2)
+        {
+            Console.WriteLine("X: (0; +inf)");
+            Console.WriteLine("Y: (0; +inf)");
+            writeQurter = false;
+        }
+        else if(quater == 3)
+        {
+            Console.WriteLine("X: (-inf; 0)");
+            Console.WriteLine("Y: (-inf; 0)");
+            writeQurter = false;
+        }
+        else if(quater == 4)
+        {
+            Console.WriteLine("X: (0; +inf)");
+            Console.WriteLine("Y: (-inf; 0)");
+            writeQurter = false;
+        }
+    }
+}
