@@ -22,6 +22,7 @@ void Main()
         {
             case "18": task18(); break;
             case "21": task21(); break;
+            case "22": task22(); break;
             case "ex": IsWoring = false; break;
             default: break;
         }
@@ -76,4 +77,18 @@ double distance(int x1, int y1, int x2, int y2)
 {
     double dist  = Math.Sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
     return dist;
+}
+
+void task22()//Программа принимает на вход число и выдает таблицу квадратов чисел
+{
+    int quarterNum = ReadNum("length of quarter line");
+    Console.WriteLine(QuarterString(quarterNum)); 
+}
+
+string QuarterString(int num)
+{
+    string qurterLine = "";
+    for(int i = 1; i <= num; i++)
+        qurterLine = qurterLine + $"{i*i}, ";
+    return qurterLine;
 }
