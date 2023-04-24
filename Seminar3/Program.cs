@@ -30,29 +30,29 @@ void Main()
 void task18()// рограмма по заданной четверти возвращает диапазон координат X,Y
 {
     bool writeQurter = true;
-    int quater;
+    int quarter;
     while(writeQurter)
     {
-        quater = ReadNum("quater number"); 
-        if(quater == 1)
+        quarter = ReadNum("quarter number"); 
+        if(quarter == 1)
         {
             Console.WriteLine("X: (-inf; 0)");
             Console.WriteLine("Y: (0; +inf)");
             writeQurter = false;        
         }
-        else if(quater == 2)
+        else if(quarter == 2)
         {
             Console.WriteLine("X: (0; +inf)");
             Console.WriteLine("Y: (0; +inf)");
             writeQurter = false;
         }
-        else if(quater == 3)
+        else if(quarter == 3)
         {
             Console.WriteLine("X: (-inf; 0)");
             Console.WriteLine("Y: (-inf; 0)");
             writeQurter = false;
         }
-        else if(quater == 4)
+        else if(quarter == 4)
         {
             Console.WriteLine("X: (0; +inf)");
             Console.WriteLine("Y: (-inf; 0)");
