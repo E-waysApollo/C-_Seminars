@@ -1,16 +1,5 @@
 ﻿Main();
 
-int ReadNum(string argument)
-{
-    Console.WriteLine($"Input {argument}");
-    int num;
-    while(!int.TryParse(Console.ReadLine(), out num))
-    {
-        Console.WriteLine("It's not a number");   
-    }
-    return num;
-}
-
 void Main()
 {
     bool IsWoring = true;
@@ -73,16 +62,21 @@ void task21()//программа принимает на вход коорди�
     Console.WriteLine($"Diastance is {xyDist}");
 }
 
-double distance(int x1, int y1, int x2, int y2)
-{
-    double dist  = Math.Sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
-    return dist;
-}
-
 void task22()//Программа принимает на вход число и выдает таблицу квадратов чисел
 {
     int quarterNum = ReadNum("length of quarter line");
     Console.WriteLine(QuarterString(quarterNum)); 
+}
+
+int ReadNum(string argument)
+{
+    Console.WriteLine($"Input {argument}");
+    int num;
+    while(!int.TryParse(Console.ReadLine(), out num))
+    {
+        Console.WriteLine("It's not a number");   
+    }
+    return num;
 }
 
 string QuarterString(int num)
@@ -91,4 +85,10 @@ string QuarterString(int num)
     for(int i = 1; i <= num; i++)
         qurterLine = qurterLine + $"{i*i}, ";
     return qurterLine;
+}
+
+double distance(int x1, int y1, int x2, int y2)
+{
+    double dist  = Math.Sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+    return dist;
 }
