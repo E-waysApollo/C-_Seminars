@@ -3,7 +3,7 @@
 void Main()
 {
     bool IsWoring = true;
-    while(IsWoring)
+    while (IsWoring)
     {
         Console.WriteLine("Input task number");
         string taskNum = Console.ReadLine();
@@ -22,12 +22,12 @@ void task19()//прорамма принимает 5-значное число �
 {
     bool fiveDigit = false;
     int fiveDigitNumber;
-    while(!fiveDigit)
+    while (!fiveDigit)
     {
         fiveDigitNumber = ReadNum("five digit number");
-        if(fiveDigitNumber / 10000 >= 1 && fiveDigitNumber / 100000 < 1)
+        if (fiveDigitNumber / 10000 >= 1 && fiveDigitNumber / 100000 < 1)
         {
-            if(fiveDigitNumber/10000 == fiveDigitNumber%10 && fiveDigitNumber/1000-fiveDigitNumber/10000*10 == (fiveDigitNumber%100-fiveDigitNumber%10)/10)
+            if (fiveDigitNumber / 10000 == fiveDigitNumber % 10 && fiveDigitNumber / 1000 - fiveDigitNumber / 10000 * 10 == (fiveDigitNumber % 100 - fiveDigitNumber % 10) / 10)
                 Console.WriteLine("It's a palindrom");
             else
                 Console.WriteLine("It's not a palindrom");
@@ -51,16 +51,16 @@ void task21()//программа принимает на вход коорди�
 void task23()//Программа принимает на вход число и выдает таблицу кубов чисел
 {
     int kubeNum = ReadNum("length of quarter line");
-    Console.WriteLine(KubeString(kubeNum)); 
+    Console.WriteLine(KubeString(kubeNum));
 }
 
 int ReadNum(string argument)
 {
     Console.WriteLine($"Input {argument}");
     int num;
-    while(!int.TryParse(Console.ReadLine(), out num))
+    while (!int.TryParse(Console.ReadLine(), out num))
     {
-        Console.WriteLine("It's not a number");   
+        Console.WriteLine("It's not a number");
     }
     return num;
 }
@@ -68,13 +68,13 @@ int ReadNum(string argument)
 string KubeString(int num)
 {
     string kubeLine = "";
-    for(int i = 1; i <= num; i++)
-        kubeLine = kubeLine + $"{i*i*i}, ";
+    for (int i = 1; i <= num; i++)
+        kubeLine = kubeLine + $"{i * i * i}, ";
     return kubeLine;
 }
 
 double distance3D(int x1, int y1, int z1, int x2, int y2, int z2)
 {
-    double dist  = Math.Sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2) + (z1-z2)*(z1-z2));
+    double dist = Math.Sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2) + (z1 - z2) * (z1 - z2));
     return dist;
 }
