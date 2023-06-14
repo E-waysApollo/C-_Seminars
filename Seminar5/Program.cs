@@ -10,6 +10,7 @@ void Main()
         switch (taskNum)
         {
             case "31": task31(); break;
+            case "33": task33(); break;
             case "ex": IsWoring = false; break;
             default: break;
         }
@@ -30,6 +31,28 @@ void task31()
     Console.WriteLine();
     Console.WriteLine($"Positive sum is: {mas12_possum}");
     Console.WriteLine($"Negative sum is: {mas12_negsum}");
+}
+
+void task33()
+{
+    int[] massive33 = random_massive(5, 0, 5);
+    bool exist33 = exist_in_massive(ReadNum("Input the number"), massive33);
+
+    Console.WriteLine("Massive is:");
+    for(int i = 0; i < massive33.Length; i++)
+    {
+        Console.Write(massive33[i] + "; ");
+    }
+    Console.WriteLine();
+    
+    if(exist33 == true)
+    {
+        Console.WriteLine("Yes");
+    }
+    else
+    {
+        Console.WriteLine("No");
+    }
 }
 
 int[] random_massive(int length, int min_lim, int max_lim)//create massive with random numbers
@@ -66,4 +89,28 @@ int negative_sum(int[] mas)// count negative sum of massive numbers
         }        
     }
     return negative_sum_result;
+}
+
+bool exist_in_massive(int number, int[] massive)// check number in massive
+{
+    bool exist = false;
+    for(int j = 0; j < massive.Length; j++)
+    {
+        if(massive[j] == number)
+        {
+            exist = true;
+        }
+    }
+    return exist;
+}
+
+int ReadNum(string text)
+{
+    int num;
+    Console.WriteLine(text);
+    while(!int.TryParse(Console.ReadLine(), out num))
+    {
+        Console.WriteLine("It is not a number");
+    }
+    return num;
 }
