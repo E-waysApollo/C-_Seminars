@@ -12,6 +12,7 @@ void Main()
             case "31": task31(); break;
             case "32": task32(); break;
             case "33": task33(); break;
+            case "int": taskint(); break;
             case "ex": IsWoring = false; break;
             default: break;
         }
@@ -72,6 +73,12 @@ void task33()
     {
         Console.WriteLine("No");
     }
+}
+
+void taskint()
+{
+    double intagral = resolve_inegral(5, 4, 3, 10);
+    Console.WriteLine(intagral);
 }
 
 int[] random_massive(int length, int min_lim, int max_lim)//create massive with random numbers
@@ -142,4 +149,14 @@ int ReadNum(string text)
         Console.WriteLine("It is not a number");
     }
     return num;
+}
+
+double resolve_inegral(int a, int b, int x1, int x2)// resolve ingegral y=a*x+b, from [x1; x2]
+{
+    double sum = 0;
+    for(double x = x1; x <= x2; x = x + 0.1)
+    {
+        sum = sum + (a*x+b);
+    }
+    return sum;
 }
