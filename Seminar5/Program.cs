@@ -12,6 +12,7 @@ void Main()
             case "31": task31(); break;
             case "32": task32(); break;
             case "33": task33(); break;
+            case "35": task35(); break;
             case "int": taskint(); break;
             case "ex": IsWoring = false; break;
             default: break;
@@ -73,6 +74,16 @@ void task33()
     {
         Console.WriteLine("No");
     }
+}
+
+void task35() //create 123 random number array and find quantity array alements in range [10;99]
+{
+    int [] array35 = random_massive(123, 0, 100);
+    int quantity35 = quantity_of_elements_in_array_range(array35, 10, 99);
+    Console.WriteLine("Array is:");
+    for(int i = 0; i < array35.Length; i++){Console.Write(array35[i] + "; ");}
+    Console.WriteLine();
+    Console.WriteLine($"Quantity array elements in range [10; 99] is: {quantity35}");
 }
 
 void taskint()
@@ -159,4 +170,14 @@ double resolve_inegral(int a, int b, int x1, int x2)// resolve ingegral y=a*x+b,
         sum = sum + (a*x+b);
     }
     return sum;
+}
+
+int quantity_of_elements_in_array_range (int [] array, int min, int max)//find quantity array alements in range
+{
+    int quantity = 0;
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i] >= min && array[i] <= max){quantity++;}
+    }
+    return quantity;
 }
