@@ -13,6 +13,7 @@ void Main()
             case "32": task32(); break;
             case "33": task33(); break;
             case "35": task35(); break;
+            case "37": task37(); break;
             case "int": taskint(); break;
             case "ex": IsWoring = false; break;
             default: break;
@@ -27,11 +28,7 @@ void task31()
     int mas12_negsum = negative_sum(mas12);
 
     Console.WriteLine("Random massive is");
-    for(int i = 0; i < mas12.Length; i++)
-    {
-        Console.Write(mas12[i] + "; ");
-    }
-    Console.WriteLine();
+    print_array(mas12);
     Console.WriteLine($"Positive sum is: {mas12_possum}");
     Console.WriteLine($"Negative sum is: {mas12_negsum}");
 }
@@ -41,17 +38,9 @@ void task32()
     int[] or_mas = random_massive(4, -5, 5);
     int[] rev_mas = massive_reverse(or_mas);
     Console.WriteLine($"Origin massive is: ");
-    for(int i = 0; i < or_mas.Length; i++)
-    {
-        Console.Write(or_mas[i] + "; ");
-    }
-    Console.WriteLine();
+    print_array(or_mas);
     Console.WriteLine($"Reverse massive is:");
-    for(int i = 0; i < or_mas.Length; i++)
-    {
-        Console.Write(rev_mas[i] + "; ");
-    }
-    Console.WriteLine();
+    print_array(rev_mas);
 }
 
 void task33()
@@ -60,20 +49,10 @@ void task33()
     bool exist33 = exist_in_massive(ReadNum("Input the number"), massive33);
 
     Console.WriteLine("Massive is:");
-    for(int i = 0; i < massive33.Length; i++)
-    {
-        Console.Write(massive33[i] + "; ");
-    }
-    Console.WriteLine();
-    
-    if(exist33 == true)
-    {
-        Console.WriteLine("Yes");
-    }
-    else
-    {
-        Console.WriteLine("No");
-    }
+    print_array(massive33);
+
+    if(exist33 == true){Console.WriteLine("Yes");}
+    else{Console.WriteLine("No");}
 }
 
 void task35() //create 123 random number array and find quantity array alements in range [10;99]
@@ -81,9 +60,19 @@ void task35() //create 123 random number array and find quantity array alements 
     int [] array35 = random_massive(123, 0, 100);
     int quantity35 = quantity_of_elements_in_array_range(array35, 10, 99);
     Console.WriteLine("Array is:");
-    for(int i = 0; i < array35.Length; i++){Console.Write(array35[i] + "; ");}
-    Console.WriteLine();
+    print_array(array35);
     Console.WriteLine($"Quantity array elements in range [10; 99] is: {quantity35}");
+}
+
+void task37()// multiply pairs of array elements, firs and last, second and prelast, etc
+{
+    int [] array37 = random_massive(4, 0, 10);
+    int [] array37_multiply = multiply_array_elements(array37);
+    
+    Console.WriteLine("Origin array is:");
+    print_array(array37);
+    Console.WriteLine("Multiply array is:");
+    print_array (array37_multiply);
 }
 
 void taskint()
@@ -180,4 +169,23 @@ int quantity_of_elements_in_array_range (int [] array, int min, int max)//find q
         if(array[i] >= min && array[i] <= max){quantity++;}
     }
     return quantity;
+}
+
+void print_array(int [] array)
+{
+    for(int i = 0; i < array.Length; i++){Console.Write(array[i] + "; ");}
+    Console.WriteLine();
+}
+
+int [] multiply_array_elements(int [] array)
+{
+    int [] multiply_array = new int[Convert.ToInt32(Math.Ceiling(Convert.ToDouble(array.Length)/2))];
+    for(int i = 0; i < multiply_array.Length; i++){
+        if(i == array.Length -1 - i){
+            multiply_array[i] = array[i];
+        }
+        else{
+            multiply_array[i] = array[i] * array[array.Length -1 - i];}
+    }
+    return multiply_array;
 }
