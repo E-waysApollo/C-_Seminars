@@ -11,6 +11,7 @@ void Main()
         {
             case "31": task31(); break;
             case "32": task32(); break;
+            case "33": task33(); break;
             case "ex": IsWoring = false; break;
             default: break;
         }
@@ -49,6 +50,28 @@ void task32()
         Console.Write(rev_mas[i] + "; ");
     }
     Console.WriteLine();
+}
+
+void task33()
+{
+    int[] massive33 = random_massive(5, 0, 5);
+    bool exist33 = exist_in_massive(ReadNum("Input the number"), massive33);
+
+    Console.WriteLine("Massive is:");
+    for(int i = 0; i < massive33.Length; i++)
+    {
+        Console.Write(massive33[i] + "; ");
+    }
+    Console.WriteLine();
+    
+    if(exist33 == true)
+    {
+        Console.WriteLine("Yes");
+    }
+    else
+    {
+        Console.WriteLine("No");
+    }
 }
 
 int[] random_massive(int length, int min_lim, int max_lim)//create massive with random numbers
@@ -95,4 +118,28 @@ int[] massive_reverse(int[] mas)// mutiply all massive numbers on -1
         mas_rev[i] = mas[i] * (-1);
     }
     return mas_rev;
+}
+
+bool exist_in_massive(int number, int[] massive)// check number in massive
+{
+    bool exist = false;
+    for(int j = 0; j < massive.Length; j++)
+    {
+        if(massive[j] == number)
+        {
+            exist = true;
+        }
+    }
+    return exist;
+}
+
+int ReadNum(string text)
+{
+    int num;
+    Console.WriteLine(text);
+    while(!int.TryParse(Console.ReadLine(), out num))
+    {
+        Console.WriteLine("It is not a number");
+    }
+    return num;
 }
