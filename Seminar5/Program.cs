@@ -12,6 +12,7 @@ void Main()
             case "31": task31(); break;
             case "32": task32(); break;
             case "33": task33(); break;
+            case "34": task34(); break;
             case "35": task35(); break;
             case "37": task37(); break;
             case "int": taskint(); break;
@@ -53,6 +54,14 @@ void task33()
 
     if(exist33 == true){Console.WriteLine("Yes");}
     else{Console.WriteLine("No");}
+}
+
+void task34() //random array with three digit numbers. Need to find quantity of even numbers
+{
+    int [] array34 = random_massive(5, 100, 999);
+    int evenQuntity34 = even_quantity_in_array(array34);
+    print_array(array34);
+    Console.WriteLine(evenQuntity34);
 }
 
 void task35() //create 123 random number array and find quantity array alements in range [10;99]
@@ -188,4 +197,14 @@ int [] multiply_array_elements(int [] array)
             multiply_array[i] = array[i] * array[array.Length -1 - i];}
     }
     return multiply_array;
+}
+
+int even_quantity_in_array(int [] array) // count quantity of even numbers in array
+{
+    int evenQuntity = 0;
+    for(int i = 0; i < array.Length; i++){
+        if(array[i] % 2 == 0)
+            evenQuntity++;
+    }
+    return evenQuntity;
 }
