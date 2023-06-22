@@ -14,6 +14,7 @@ void Main()
             case "33": task33(); break;
             case "34": task34(); break;
             case "35": task35(); break;
+            case "36": task36(); break;
             case "37": task37(); break;
             case "int": taskint(); break;
             case "ex": IsWoring = false; break;
@@ -59,7 +60,7 @@ void task33()
 void task34() //random array with three digit numbers. Need to find quantity of even numbers
 {
     int [] array34 = random_massive(5, 100, 999);
-    int evenQuntity34 = even_quantity_in_array(array34);
+    int evenQuntity34 = even_quantity_array(array34);
     print_array(array34);
     Console.WriteLine(evenQuntity34);
 }
@@ -71,6 +72,14 @@ void task35() //create 123 random number array and find quantity array alements 
     Console.WriteLine("Array is:");
     print_array(array35);
     Console.WriteLine($"Quantity array elements in range [10; 99] is: {quantity35}");
+}
+
+void task36() // find sum of even array elements
+{
+    int [] array36 = random_massive(4, 0, 10);
+    int evenSum36 = even_sum_array(array36);
+    print_array(array36);
+    Console.WriteLine(evenSum36);
 }
 
 void task37()// multiply pairs of array elements, firs and last, second and prelast, etc
@@ -199,7 +208,7 @@ int [] multiply_array_elements(int [] array)
     return multiply_array;
 }
 
-int even_quantity_in_array(int [] array) // count quantity of even numbers in array
+int even_quantity_array(int [] array) // count quantity of even numbers in array
 {
     int evenQuntity = 0;
     for(int i = 0; i < array.Length; i++){
@@ -207,4 +216,12 @@ int even_quantity_in_array(int [] array) // count quantity of even numbers in ar
             evenQuntity++;
     }
     return evenQuntity;
+}
+
+int even_sum_array(int [] array) // count sum of even array elements
+{
+    int evenSum = 0;
+    for(int i = 1; i < array.Length; i += 2)
+        evenSum = evenSum + array[i];
+    return evenSum;
 }
