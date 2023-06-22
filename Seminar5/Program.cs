@@ -16,6 +16,7 @@ void Main()
             case "35": task35(); break;
             case "36": task36(); break;
             case "37": task37(); break;
+            case "38": task38(); break;
             case "int": taskint(); break;
             case "ex": IsWoring = false; break;
             default: break;
@@ -93,6 +94,14 @@ void task37()// multiply pairs of array elements, firs and last, second and prel
     print_array (array37_multiply);
 }
 
+void task38() // find diference between max and min double array element
+{
+    double[] array38 = random_double_array(5, 10);
+    double diference38 = find_max_array(array38) - find_min_array(array38);
+    print_double_array(array38);
+    Console.WriteLine($"Diference between max and min array elements is: {diference38}");
+}
+
 void taskint()
 {
     double intagral = resolve_inegral(5, 4, 3, 10);
@@ -107,6 +116,14 @@ int[] random_massive(int length, int min_lim, int max_lim)//create massive with 
         massive[i] = new Random().Next(min_lim, max_lim);
     }
     return massive;
+}
+
+double [] random_double_array(int length, int max) // create double array
+{
+    double[] array = new double[length];
+    for(int i = 0; i < array.Length; i++)
+        array[i] = Math.Round(new Random().NextDouble() * max, 2);//(min, max);
+    return array;
 }
 
 int positive_sum(int[] mas)// count positive sum of massive numbers
@@ -195,6 +212,12 @@ void print_array(int [] array)
     Console.WriteLine();
 }
 
+void print_double_array(double [] array)
+{
+    for(int i = 0; i < array.Length; i++){Console.Write(array[i] + "; ");}
+    Console.WriteLine();
+}
+
 int [] multiply_array_elements(int [] array)
 {
     int [] multiply_array = new int[Convert.ToInt32(Math.Ceiling(Convert.ToDouble(array.Length)/2))];
@@ -224,4 +247,25 @@ int even_sum_array(int [] array) // count sum of even array elements
     for(int i = 1; i < array.Length; i += 2)
         evenSum = evenSum + array[i];
     return evenSum;
+}
+
+
+double find_max_array(double[] array)
+{
+    double max = array[0];
+    for(int i = 1; i < array.Length; i++){
+        if(array[i] > max)
+            max = Math.Round(array[i], 2);
+    }
+    return max;
+}
+
+double find_min_array(double[] array)
+{
+    double min = array[0];
+    for(int i = 0; i < array.Length; i++){
+        if(array[i] < min)
+            min = Math.Round(array[i], 2);
+    }
+    return min;
 }
