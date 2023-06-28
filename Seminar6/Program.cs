@@ -40,7 +40,7 @@ void task40() // // check if traigle with  boards a, b, c exists
 
 void task42() // revert 10digit number to 2 digit number
 {
-   Console.WriteLine(revert_10_to_n(ReadNum("Input the number for revert"), ReadNum("Input the number system")));   
+   Console.WriteLine("Result:" + revert_10_to_n(ReadNum("Input the number for revert"), ReadNum("Input the number system")));   
 }
 
 int[] random_array(int length, int min_lim, int max_lim)//create massive with random numbers
@@ -98,20 +98,15 @@ string revert_10_to_n(int number, int NumberSystem)// revert 10digit number to 3
     string digit = "";
     while(number > 0){
         reminder = number % NumberSystem;
-        if(reminder == 10)
-            digit = "A";
-        else if(reminder == 11)
-            digit = "B";
-        else if(reminder == 12)
-            digit = "C";
-        else if(reminder == 13)
-            digit = "D";
-        else if(reminder == 14)
-            digit = "E";
-        else if(reminder == 15)
-            digit = "F";
-        else
-            digit = reminder.ToString();
+        switch (reminder){
+            case 10: digit = "A"; break;
+            case 11: digit = "B"; break;
+            case 12: digit = "C"; break;
+            case 13: digit = "D"; break;
+            case 14: digit = "E"; break;
+            case 15: digit = "F"; break;
+            default:  digit = reminder.ToString(); break;
+        }
         revert += digit;
         number = number / NumberSystem;
     }
