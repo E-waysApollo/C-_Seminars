@@ -38,7 +38,10 @@ void task40() // // check if traigle with  boards a, b, c exists
         Console.WriteLine("Triangle dose not exist");
 }
 
-
+void task42() // revert 10digit number to 2 digit number
+{
+   Console.WriteLine(revert_10_to_n(ReadNum("Input the number for revert"), ReadNum("Input the number system")));   
+}
 
 int[] random_array(int length, int min_lim, int max_lim)//create massive with random numbers
 {    
@@ -87,3 +90,34 @@ int ReadNum(string text)
     }
     return num;
 }
+
+string revert_10_to_n(int number, int NumberSystem)// revert 10digit number to 3 digit number
+{
+    string revert = "";
+    int reminder;
+    string digit = "";
+    while(number > 0){
+        reminder = number % NumberSystem;
+        if(reminder == 10)
+            digit = "A";
+        else if(reminder == 11)
+            digit = "B";
+        else if(reminder == 12)
+            digit = "C";
+        else if(reminder == 13)
+            digit = "D";
+        else if(reminder == 14)
+            digit = "E";
+        else if(reminder == 15)
+            digit = "F";
+        else
+            digit = reminder.ToString();
+        revert += digit;
+        number = number / NumberSystem;
+    }
+    string result = "";
+    for(int i = revert.Length-1; i >= 0; i--){
+        result = result + revert[i];
+    }
+    return result;
+}    
