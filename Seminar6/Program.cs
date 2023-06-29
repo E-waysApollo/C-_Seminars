@@ -13,6 +13,7 @@ void Main()
             case "40": task40(); break;
             case "42": task42(); break;
             case "44": task44(); break;
+            case "45": task45(); break;
             case "ex": IsWoring = false; break;
             default: break;
         }
@@ -47,6 +48,13 @@ void task42() // revert 10digit number to 2 digit number
 void task44() //Fibonachi
 {
     print_array(fibonachi(ReadNum("Input array size")));
+}
+
+void task45() // copy array
+{
+    int[] array45 = random_array(5, 0, 9);
+    print_array(array45);
+    print_array(copy_array(array45));
 }
 
 int[] random_array(int length, int min_lim, int max_lim)//create massive with random numbers
@@ -132,4 +140,13 @@ int[] fibonachi(int number)// Fibonachi
         fibonachiArray[i] = fibonachiArray[i-1] + fibonachiArray[i-2];
     }
     return fibonachiArray;
+}
+
+int[] copy_array(int[] array) // copy array
+{
+    int[] copyArray = new int[array.Length];
+    for(int i = 0; i < array.Length; i++){
+        copyArray[i] = array[i];
+    } 
+    return copyArray;
 }
