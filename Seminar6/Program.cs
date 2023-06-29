@@ -12,6 +12,7 @@ void Main()
             case "39": task39(); break;
             case "40": task40(); break;
             case "42": task42(); break;
+            case "44": task44(); break;
             case "ex": IsWoring = false; break;
             default: break;
         }
@@ -41,6 +42,11 @@ void task40() // // check if traigle with  boards a, b, c exists
 void task42() // revert 10digit number to 2 digit number
 {
    Console.WriteLine("Result:" + revert_10_to_n(ReadNum("Input the number for revert"), ReadNum("Input the number system")));   
+}
+
+void task44() //Fibonachi
+{
+    print_array(fibonachi(ReadNum("Input array size")));
 }
 
 int[] random_array(int length, int min_lim, int max_lim)//create massive with random numbers
@@ -116,3 +122,14 @@ string revert_10_to_n(int number, int NumberSystem)// revert 10digit number to 3
     }
     return result;
 }    
+
+int[] fibonachi(int number)// Fibonachi
+{
+    int[] fibonachiArray = new int[number];
+    fibonachiArray[0] = 0;
+    fibonachiArray[1] = 1;
+    for(int i = 2; i < number; i++){
+        fibonachiArray[i] = fibonachiArray[i-1] + fibonachiArray[i-2];
+    }
+    return fibonachiArray;
+}
