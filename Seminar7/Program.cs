@@ -66,7 +66,7 @@ void task50() // input index of element and print the element
     Console.WriteLine("MxN array is here!");
     PrintArray2D(task50Array2D);
     int MIndex = ReadNum("Input M-index:");
-    int NIndex = ReadNum("Input N-index");
+    int NIndex = ReadNum("Input N-index:");
     Console.WriteLine($"Array element is: {task50Array2D[MIndex,NIndex]}");
 }
 
