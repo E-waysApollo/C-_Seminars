@@ -14,6 +14,8 @@ void Main()
             case "42": task42(); break;
             case "44": task44(); break;
             case "45": task45(); break;
+            case "h1": taskh1(); break;
+            case "h2": taskh2(); break;
             case "ex": IsWoring = false; break;
             default: break;
         }
@@ -57,6 +59,29 @@ void task45() // copy array
     print_array(copy_array(array45));
 }
 
+void taskh1()// count how many numbers bigger then 0
+{
+    int positiveNumbers = 0;
+    Console.WriteLine("Input array numbers");
+    int inputNumber;
+    while(int.TryParse(Console.ReadLine(), out inputNumber)){
+        if(inputNumber > 0)
+            positiveNumbers ++;
+    }
+    Console.WriteLine($"positive numbers: {positiveNumbers}");
+}
+
+void taskh2() // find dot of crossing
+{
+    double k1 = ReadNum("Input k1 of y = k1*x+b1");
+    double b1 = ReadNum("Input b1 of y = k1*x+b1");
+    double k2 = ReadNum("Input k2 of y = k2*x+b2");
+    double b2 = ReadNum("Input b2 of y = k2*x+b2");
+    double x = (b1-b2)/(k2-k1);
+    double y = (b2*k1 - b1*k2)/(k1-k2);
+    Console.WriteLine($"Dot of crossing is ({x}; {y})");
+}
+
 int[] random_array(int length, int min_lim, int max_lim)//create massive with random numbers
 {    
     int [] massive = new int[length];
@@ -94,7 +119,7 @@ bool exist_traingle(int a, int b, int c) // check if traigle with  boards a, b, 
     return exist;
 }
 
-int ReadNum(string text)
+int ReadNum(string text = " ")
 {
     int num;
     Console.WriteLine(text);
