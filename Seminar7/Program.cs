@@ -12,6 +12,7 @@ void Main()
             case "46": Console.WriteLine(); task46(); break;
             case "48": Console.WriteLine(); task48(); break;
             case "49": Console.WriteLine(); task49(); break;
+            case "51": Console.WriteLine(); task51(); break;
             case "ex": IsWoring = false; break;
             default: break;
         }
@@ -41,6 +42,15 @@ void task49() // create array, square elements which have even m and n index, pr
     PrintArray2D(task49Array2D);
 }
 
+void task51() //create 2d array, find diagonal elements sum and print it
+{
+    int[,] task51Array2D = NewRandomArray2D(4,4);
+    Console.WriteLine("Origin array");
+    PrintArray2D(task51Array2D);
+    int sumTask51Array2D = DiagonalSum(task51Array2D);
+    Console.WriteLine($"Diagonal sum: {sumTask51Array2D}");
+}
+
 void PrintArray2D(int[,] array2d) // print 2d array
 {
     for(int i = 0; i < array2d.GetLength(0); i++){
@@ -57,7 +67,7 @@ int[,] NewRandomArray2D(int rows, int colums) //fill 2d array
     int[,] array2d = new int[rows, colums];
     for(int i = 0; i < array2d.GetLength(0); i++){
         for(int j = 0; j < array2d.GetLength(1); j++){
-            array2d[i,j] = new Random().Next(0, 11); // [0, 10)
+            array2d[i,j] = new Random().Next(0, 10); // [0, 10)
         }
     }
     return array2d;
@@ -82,4 +92,15 @@ int[,] ReturnSquareEvenIndexArray2D(int[,] array2d) // Square elements which hav
         } 
     }
     return array2d;
+}
+
+int DiagonalSum(int[,] array2D) // find sum of diagonal array elements
+{
+    int diagSum = 0;
+    for(int i = 0; i < array2D.GetLength(0); i++){
+        for(int j = i; j == i; j++){
+            diagSum = diagSum + array2D[i,j];
+        }
+    }
+    return diagSum;
 }
