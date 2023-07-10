@@ -10,6 +10,7 @@ void Main()
         switch (taskNum)
         {
             case "46": Console.WriteLine(); task46(); break;
+            case "47": Console.WriteLine(); task47(); break;
             case "48": Console.WriteLine(); task48(); break;
             case "49": Console.WriteLine(); task49(); break;
             case "51": Console.WriteLine(); task51(); break;
@@ -51,7 +52,24 @@ void task51() //create 2d array, find diagonal elements sum and print it
     Console.WriteLine($"Diagonal sum: {sumTask51Array2D}");
 }
 
+void task47() //Create and print double array
+{
+    double[,] task47DoubleArray2D = NewRandomDoubleArray2D(4,4);
+    PrintDoubleArray2D(task47DoubleArray2D);
+}
+
 void PrintArray2D(int[,] array2d) // print 2d array
+{
+    for(int i = 0; i < array2d.GetLength(0); i++){
+        for(int j = 0; j < array2d.GetLength(1); j++){
+            Console.Write($"{array2d[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+void PrintDoubleArray2D(double[,] array2d) // print 2d array
 {
     for(int i = 0; i < array2d.GetLength(0); i++){
         for(int j = 0; j < array2d.GetLength(1); j++){
@@ -68,6 +86,17 @@ int[,] NewRandomArray2D(int rows, int colums) //fill 2d array
     for(int i = 0; i < array2d.GetLength(0); i++){
         for(int j = 0; j < array2d.GetLength(1); j++){
             array2d[i,j] = new Random().Next(0, 10); // [0, 10)
+        }
+    }
+    return array2d;
+}
+
+double[,] NewRandomDoubleArray2D(int rows, int colums) //fill 2d double array
+{
+    double[,] array2d = new double[rows, colums];
+    for(int i = 0; i < array2d.GetLength(0); i++){
+        for(int j = 0; j < array2d.GetLength(1); j++){
+            array2d[i,j] = new Random().NextDouble(); // [0, 10)
         }
     }
     return array2d;
