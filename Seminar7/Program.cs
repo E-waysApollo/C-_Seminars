@@ -10,6 +10,7 @@ void Main()
         switch (taskNum)
         {
             case "46": Console.WriteLine(); task46(); break;
+            case "48": Console.WriteLine(); task48(); break;
             case "ex": IsWoring = false; break;
             default: break;
         }
@@ -20,6 +21,13 @@ void task46() // create and print 2d array
     int[,] task46Array2D = NewRandomArray2D(3,4);
     Console.WriteLine("Random array here!");
     PrintArray2D(task46Array2D);
+}
+
+void task48() //create and print m*n  array. Each element = m+n 
+{
+    int[,] task48Array2D = NewSumArray2D(3,4);
+    Console.WriteLine("Array! Each element = m+n");
+    PrintArray2D(task48Array2D);
 }
 
 void PrintArray2D(int[,] array2d) // print 2d array
@@ -42,4 +50,15 @@ int[,] NewRandomArray2D(int rows, int colums) //fill 2d array
         }
     }
     return array2d;
+}
+
+int[,] NewSumArray2D(int rows, int colums) // create m*n  array. Each element = m+n 
+{
+    int[,] arraySum2D = new int[rows, colums];
+    for(int i = 0; i < arraySum2D.GetLength(0); i++){
+        for(int j = 0; j < arraySum2D.GetLength(1); j++){
+            arraySum2D[i,j] = i + j;
+        }
+    }
+    return arraySum2D;
 }
