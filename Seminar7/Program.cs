@@ -13,6 +13,7 @@ void Main()
             case "47": Console.WriteLine(); task47(); break;
             case "48": Console.WriteLine(); task48(); break;
             case "49": Console.WriteLine(); task49(); break;
+            case "50": Console.WriteLine(); task50(); break;
             case "51": Console.WriteLine(); task51(); break;
             case "ex": IsWoring = false; break;
             default: break;
@@ -56,6 +57,27 @@ void task47() //Create and print double array
 {
     double[,] task47DoubleArray2D = NewRandomDoubleArray2D(4,4);
     PrintDoubleArray2D(task47DoubleArray2D);
+}
+
+void task50() // input index of element and print the element
+{
+    int[,] task50Array2D = NewRandomArray2D(5,5);
+    Console.WriteLine("MxN array is here!");
+    PrintArray2D(task50Array2D);
+    int MIndex = ReadNum("Input M-index:");
+    int NIndex = ReadNum("Input N-index");
+    Console.WriteLine($"Array element is: {task50Array2D[MIndex,NIndex]}");
+}
+
+int ReadNum(string text = " ")
+{
+    int num;
+    Console.WriteLine(text);
+    while(!int.TryParse(Console.ReadLine(), out num))
+    {
+        Console.WriteLine("It is not a number");
+    }
+    return num;
 }
 
 void PrintArray2D(int[,] array2d) // print 2d array
