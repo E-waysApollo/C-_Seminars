@@ -11,6 +11,7 @@ void Main()
         {
             case "46": Console.WriteLine(); task46(); break;
             case "48": Console.WriteLine(); task48(); break;
+            case "49": Console.WriteLine(); task49(); break;
             case "ex": IsWoring = false; break;
             default: break;
         }
@@ -28,6 +29,16 @@ void task48() //create and print m*n  array. Each element = m+n
     int[,] task48Array2D = NewSumArray2D(3,4);
     Console.WriteLine("Array! Each element = m+n");
     PrintArray2D(task48Array2D);
+}
+
+void task49() // create array, square elements which have even m and n index, prin array
+{
+    int[,] task49Array2D = NewRandomArray2D(6,4);
+    Console.WriteLine("Origin array here!");
+    PrintArray2D(task49Array2D);
+    task49Array2D = ReturnSquareEvenIndexArray2D (task49Array2D);
+    Console.WriteLine("After square even m & n even elements");
+    PrintArray2D(task49Array2D);
 }
 
 void PrintArray2D(int[,] array2d) // print 2d array
@@ -61,4 +72,14 @@ int[,] NewSumArray2D(int rows, int colums) // create m*n  array. Each element = 
         }
     }
     return arraySum2D;
+}
+
+int[,] ReturnSquareEvenIndexArray2D(int[,] array2d) // Square elements which have even m and n index
+{
+    for(int i = 1; i < array2d.GetLength(0); i +=2){
+        for (int j = 1; j < array2d.GetLength(1); j +=2){
+            array2d[i,j] = array2d[i,j] * array2d[i,j];
+        } 
+    }
+    return array2d;
 }
