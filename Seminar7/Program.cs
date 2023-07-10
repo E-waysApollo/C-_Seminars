@@ -15,6 +15,7 @@ void Main()
             case "49": Console.WriteLine(); task49(); break;
             case "50": Console.WriteLine(); task50(); break;
             case "51": Console.WriteLine(); task51(); break;
+            case "52": Console.WriteLine(); task52(); break;
             case "ex": IsWoring = false; break;
             default: break;
         }
@@ -69,6 +70,13 @@ void task50() // input index of element and print the element
     Console.WriteLine($"Array element is: {task50Array2D[MIndex,NIndex]}");
 }
 
+void task52() // find semiarifmetical in each colum
+{
+    double[,] task52Array2D = NewRandomDoubleArray2D(4,4);
+    PrintDoubleArray2D(task52Array2D);
+    PrintDoubleArray(SemiarifmeticalInColum(task52Array2D));    
+}
+
 int ReadNum(string text = " ")
 {
     int num;
@@ -102,6 +110,12 @@ void PrintDoubleArray2D(double[,] array2d) // print 2d array
     Console.WriteLine();
 }
 
+void PrintDoubleArray(double [] array)
+{
+    for(int i = 0; i < array.Length; i++){Console.Write(array[i] + "; ");}
+    Console.WriteLine();
+}
+
 int[,] NewRandomArray2D(int rows, int colums) //fill 2d array
 {
     int[,] array2d = new int[rows, colums];
@@ -118,7 +132,7 @@ double[,] NewRandomDoubleArray2D(int rows, int colums) //fill 2d double array
     double[,] array2d = new double[rows, colums];
     for(int i = 0; i < array2d.GetLength(0); i++){
         for(int j = 0; j < array2d.GetLength(1); j++){
-            array2d[i,j] = new Random().NextDouble(); // [0, 10)
+            array2d[i,j] = Math.Round(new Random().NextDouble(), 2); // [0, 10)
         }
     }
     return array2d;
@@ -154,4 +168,19 @@ int DiagonalSum(int[,] array2D) // find sum of diagonal array elements
         }
     }
     return diagSum;
+}
+
+double[] SemiarifmeticalInColum(double[,] array2D) // find semiarifmetical in each colum
+{
+    double[] resultArray = new double [array2D.GetLength(1)];
+    for(int colum = 0; colum < array2D.GetLength(1); colum++){
+        double sumInColum = 0;
+        for(int row = 0; row < array2D.GetLength(0); row++){
+            sumInColum = Math.Round(sumInColum + array2D[row, colum],2);
+            //Console.WriteLine(sumInColum);
+        }
+        resultArray[colum] = sumInColum / Convert.ToDouble(array2D.GetLength(1));
+        //Console.WriteLine(resultArray);
+    }
+    return resultArray;
 }
